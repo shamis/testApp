@@ -20,14 +20,14 @@ jobs:
         cordova-version: 9
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
-    - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Xcode_11.4.app
-    - name: Xcode version
-      run: /usr/bin/xcodebuild -version
     - name: Build
       run: |
           ionic cordova platform add ios
           ionic cordova build ios --prod
     - name: List
-      run: ls -l platforms/ios/build/emulator/
-        
+      run: ls -l platforms/ios/build/emulator/MyApp.app/
+    - name: Upload app
+      uses: actions/upload-artifact@v1
+      with:
+        name: app
+        path: platforms/ios/build/emulator/MyApp.app    
