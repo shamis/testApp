@@ -23,11 +23,11 @@ jobs:
     - name: Build
       run: |
           ionic cordova platform add ios
-          ionic cordova build ios --prod
+          ionic cordova prepare ios --prod
     - name: List
-      run: ls -l platforms/ios/build/emulator/MyApp.app/
+      run: ls -l platforms/ios
     - name: Upload app
       uses: actions/upload-artifact@v1
       with:
         name: app
-        path: platforms/ios/build/emulator/MyApp.app    
+        path: platforms/ios    
