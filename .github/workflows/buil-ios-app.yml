@@ -23,7 +23,7 @@ jobs:
     - name: Build
       run: |
           ionic cordova platform add ios
-          ionic cordova build ios --prod
+          ionic cordova build ios --prod --release
     - name: List
       run: ls -l platforms/ios
     - name: Upload app
