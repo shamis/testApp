@@ -28,7 +28,7 @@ jobs:
     - name: List
       run: ls -l ./
     - name: Analyze
-      run: xcodebuild -project MyApp.xcodeproj -scheme MyApp -sdk iphonesimulator10.3 clean analyze
+      run: xcodebuild -project MyApp.xcodeproj -scheme MyApp -sdk iphoneos clean analyze
     - name: Build ios app
       run: xcodebuild -scheme MyApp -workspace MyApp.xcworkspace/ build
     - name: Upload app
