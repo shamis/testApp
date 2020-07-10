@@ -26,10 +26,6 @@ jobs:
           ionic cordova build ios --prod
     - name: List
       run: ls -l platforms/ios
-    - name: Analyze
-      run: xcodebuild -project platforms/ios/MyApp.xcodeproj -scheme MyApp -sdk iphoneos clean analyze
-    - name: Build ios app
-      run: xcodebuild -scheme MyApp -workspace platforms/ios/MyApp.xcworkspace/ build
     - name: Upload app
       uses: actions/upload-artifact@v1
       with:
