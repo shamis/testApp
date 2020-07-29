@@ -18,6 +18,10 @@ jobs:
       run: |
           echo $RELEASE_VERSION
           echo ${{ env.RELEASE_VERSION }}
+    - name: Install gsed
+      run: brew install gnu-sed
+    - name: Build config
+      run: ./.github/build_config.sh $RELEASE_VERSION iOS
     - name: Install @angular/cli
       run: npm i -D -E @angular/cli
     - name: Use coturiv/setup-ionic
