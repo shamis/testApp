@@ -2,8 +2,8 @@ name: Build iOS app
 
 on:
   push:
-    tags:
-      - '*.*.*'
+    branches:
+      - master
 
 jobs:
   build:
